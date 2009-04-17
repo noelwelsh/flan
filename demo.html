@@ -1,0 +1,39 @@
+<html>
+<head>
+
+
+<link rel="stylesheet" href="demo.css"/>
+<script type="text/javascript" src="prototype.js"></script>
+<script type="text/javascript" src="flapjax.js"></script>
+<script type="text/javascript" src="effects.js"></script>
+<script type="text/javascript" src="util.js"></script>
+<script type="text/javascript" src="events.js"></script>
+
+<title>Flan Demo</title>
+
+<script type="text/javascript">
+
+function loader() {
+  var slideButton = $('slideButton');
+  var slide = $('slide');
+
+  clicksE(slideButton).mapE( function() { slideDownE(slide) } );
+
+  var fadeButton = $('fadeButton');
+  var fade = $('fade');
+
+  clicksE(fadeButton).mapE( function() { fadeInE(fade) } );
+}
+
+</script>
+</head>
+
+<body onload="loader()">
+<p><a href="#" id="slideButton">Slide Down</a></p>
+<div id="slide" class="box">Slide Down</div>
+
+<p><a href="#" id="fadeButton">Fade In</a></p>
+<div id="fade" class="box">Fade In</div>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+Flan 0.1
+Copyright Untyped Ltd 2009
+
+Flan is an animation library for Flapjax. It is released under the MIT license.
+
+Flan requires Flapjax and Prototype
+
+See demo.html for demonstrations and example code. More documentation (and further animations etc.) will be forthcoming.
