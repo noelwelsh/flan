@@ -11,6 +11,16 @@ function makeCounter() {
   };
 }
 
+// makeCounter : () -> Any -> Number
+function makeDownCounter(start) {
+  var count = start;
+  return function(e) {
+    var now = count;
+    count--;
+    return now;
+  };
+}
+
 // makeAdder : Number -> Number -> Number
 function makeAdder(start) {
   return function(step) {

@@ -14,26 +14,49 @@
 <script type="text/javascript">
 
 function loader() {
-  var slideButton = $('slideButton');
-  var slide = $('slide');
+  // slide
+    var slideDownButton = $('slideDownButton');
+    var slideDown = $('slideDown');
 
-  clicksE(slideButton).mapE( function() { slideDownE(slide) } );
+    clicksE(slideDownButton).mapE( function() { slideDownE(slideDown) } );
 
-  var fadeButton = $('fadeButton');
-  var fade = $('fade');
 
-  clicksE(fadeButton).mapE( function() { fadeInE(fade) } );
-}
+    var slideUpButton = $('slideUpButton');
+    var slideUp = $('slideUp');
 
+    clicksE(slideUpButton).mapE( function() { slideUpE(slideUp) } );
+
+  // fade
+    var fadeInButton = $('fadeInButton');
+    var fadeIn = $('fadeIn');
+
+    clicksE(fadeInButton).mapE( function() { fadeInE(fadeIn) } );
+
+
+    var fadeOutButton = $('fadeOutButton');
+    var fadeOut = $('fadeOut');
+
+    clicksE(fadeOutButton).mapE( function() { fadeOutE(fadeOut) } );
+
+  }
 </script>
 </head>
 
 <body onload="loader()">
-<p><a href="#" id="slideButton">Slide Down</a></p>
-<div id="slide" class="box">Slide Down</div>
+  <p><span  id="slideDownButton">Slide Down</span></p>
+  <div id="slideDown" class="box">Slide Down</div>
 
-<p><a href="#" id="fadeButton">Fade In</a></p>
-<div id="fade" class="box">Fade In</div>
+  <p><span id="slideUpButton">Slide Up</span></p>
+  <div id="slideUp" class="box">Slide Up</div>
+
+
+
+  <p><span id="fadeInButton">Fade In</span></p>
+  <div id="fadeIn" class="box">Fade In</div>
+
+
+  <p><span id="fadeOutButton">Fade Out</span></p>
+  <div id="fadeOut" class="box">Fade Out</div>
 </body>
 
 </html>
