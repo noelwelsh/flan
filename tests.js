@@ -83,6 +83,14 @@ function testMakeMultiplier() {
              equals(multiplier(3), 3);
          })};
 
+function testParseColour() {
+    test('testParseColour',
+         function() {
+             same(parseColour('#0a0c0e'), {r: 10, g: 12, b: 14});
+             same(parseColour('#fafcfe'), {r: 250, g: 252, b: 254});
+         })
+}
+
 function runTests() {
     testFiniteTimerE();
     testCountE();
@@ -92,4 +100,5 @@ function runTests() {
     testMakeDownCounter();
     testMakeAdder();
     testMakeMultiplier();
+    testParseColour();
 }

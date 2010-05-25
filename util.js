@@ -40,8 +40,11 @@ function makeMultiplier(start) {
 // Parsing colours
 
 // parseColour : String -> U({r: Number,  g: Number, b: Number}, undefined)
+//
+// Parse CSS colours in the #rrggbb format into an object with r, g, b components
+// Formats we don't handle: #rgb, rgb(N, N, N), keywords like white, black, aqua.
 function parseColour(colour) {
-  var m = color.match(/\#([0-9a-fA-F][0-9a-fA-F])([0-9a-fA-F][0-9a-fA-F])([0-9a-fA-F][0-9a-fA-F])/);
+  var m = colour.match(/\#([0-9a-fA-F][0-9a-fA-F])([0-9a-fA-F][0-9a-fA-F])([0-9a-fA-F][0-9a-fA-F])/);
 
   if(m) {
     return {
