@@ -14,26 +14,63 @@
 <script type="text/javascript">
 
 function loader() {
-  var slideButton = $('slideButton');
-  var slide = $('slide');
+  //-- slide --
+    var slideDownButton = $('slideDownButton');
+    var slideDown = $('slideDown');
+    clicksE(slideDownButton).mapE( function() { slideDownE(slideDown) } );
 
-  clicksE(slideButton).mapE( function() { slideDownE(slide) } );
+    var slideUpButton = $('slideUpButton');
+    var slideUp = $('slideUp');
+    clicksE(slideUpButton).mapE( function() { slideUpE(slideUp) } );
 
-  var fadeButton = $('fadeButton');
-  var fade = $('fade');
+  //-- fade --
+    var fadeInButton = $('fadeInButton');
+    var fadeIn = $('fadeIn');
+    clicksE(fadeInButton).mapE( function() { fadeInE(fadeIn) } );
 
-  clicksE(fadeButton).mapE( function() { fadeInE(fade) } );
-}
+    var fadeOutButton = $('fadeOutButton');
+    var fadeOut = $('fadeOut');
+    clicksE(fadeOutButton).mapE( function() { fadeOutE(fadeOut) } );
 
+  //-- combine --
+    var straightToButton = $('straightToButton');
+    var straightTo = $('straightTo');
+    var debug = $('debug');
+    var debug2 = $('debug2');
+    clicksE(straightToButton).mapE( function() { straightToE(straightTo, {x:350, y:617}, {x:600, y:100}, debug, debug2); } );
+
+
+
+  }
 </script>
 </head>
 
 <body onload="loader()">
-<p><a href="#" id="slideButton">Slide Down</a></p>
-<div id="slide" class="box">Slide Down</div>
 
-<p><a href="#" id="fadeButton">Fade In</a></p>
-<div id="fade" class="box">Fade In</div>
-</body>
+
+
+  <p><span  id="slideDownButton">Slide Down</span></p>
+  <div id="slideDown" class="box">Slide Down</div>
+
+
+  <p><span id="slideUpButton">Slide Up</span></p>
+  <div id="slideUp" class="box">Slide Up</div>
+
+
+  <p><span id="fadeInButton">Fade In</span></p>
+  <div id="fadeIn" class="box">Fade In</div>
+
+
+  <p><span id="fadeOutButton">Fade Out</span></p>
+  <div id="fadeOut" class="box">Fade Out</div>
+
+
+  <p><span id="straightToButton">straightTo</span></p>
+  <div id="straightTo" class="box">straightTo</div>
+
+  <p style="position:absolute; right:50px; top:0;"id="debug"></p>
+  <p style="position:absolute; right:50px; top:50px;"id="debug2"></p>
+
+</Body>
 
 </html>

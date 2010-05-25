@@ -19,14 +19,27 @@ var testCountE =
                           });
            });
 
-var testRangeE =
-  testCase('testRangeE',
+var testIncreasingRangeE =
+  testCase('testIncreasingRangeE',
            function() {
-             var counts = [];
-             var r = rangeE(0, 100, 10, 10);
-             r.mapE(function(c) { counts.push(c); });
-             r.stopE.mapE(function() {
-                            checkEqual(counts, [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]);
+              var counts = [];
+              var r = rangeE(0, 100, 10, 10);
+              r.mapE(function(c) { counts.push(c); });
+              r.stopE.delayE(10).mapE(function() {
+                             checkEqual(counts, [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]);
+                           });
+            });
+
+
+var testDecreasingRangeE =
+  testCase('testDecreasingRangeE',
+           function() {
+              // decreasing range
+              var counts = [];
+              var r = rangeE(100, 0, 10, 10);
+              r.mapE(function(c) { counts.push(c); });
+              r.stopE.delayE(10).mapE(function() {
+                            checkEqual(counts, [100, 90, 80, 70, 50, 60, 40, 30, 20, 10, 0]);
                           });
            });
 
@@ -40,6 +53,17 @@ var testMakeCounter =
              checkEqual(counter(), 2);
              checkEqual(counter(), 3);
            });
+
+var testMakeDownCounter =
+  testCase('testMakeDownCounter',
+           function() {
+             var counter = makeDownCounter(20);
+             checkEqual(counter(), 20);
+             checkEqual(counter(), 19);
+             checkEqual(counter(), 18);
+             checkEqual(counter(), 17);
+           });
+
 
 var testMakeAdder =
   testCase('testMakeAdder',
@@ -62,8 +86,10 @@ var testMakeMultiplier =
 function runTests() {
   testFiniteTimerE();
   testCountE();
-  testRangeE();
+  testIncreasingRangeE();
+  testDecreasingRangeE();
   testMakeCounter();
+  testMakeDownCounter();
   testMakeAdder();
   testMakeMultiplier();
 }
