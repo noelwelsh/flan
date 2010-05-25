@@ -1,28 +1,17 @@
+<!DOCTYPE html>
 <html>
 <head>
-
-
-<link rel="stylesheet" href="demo.css"/>
-<script type="text/javascript" src="prototype.js"></script>
-<script type="text/javascript" src="flapjax.js"></script>
-<script type="text/javascript" src="effects.js"></script>
-<script type="text/javascript" src="mew.js"></script>
+<link rel="stylesheet" href="lib/qunit.css" type="text/css" media="screen" />
+<script type="text/javascript" src="lib/qunit.js"></script>
+<script type="text/javascript" src="lib/prototype.js"></script>
+<script type="text/javascript" src="lib/flapjax-2.1.js"></script>
+<script type="text/javascript" src="flan.js"></script>
 <script type="text/javascript" src="tests.js"></script>
-<script type="text/javascript" src="events.js"></script>
-<script type="text/javascript" src="util.js"></script>
 
-<title>Flan Tests</title>
-
-<script type="text/javascript">
-function loader() {
-  runTests();
-}
-</script>
-</head>
-
-<body onload="loader()">
-<h1>Test Results</h1>
-<div id="testResults"></div>
+<body onload="runTests()">
+<h1 id="qunit-header">Flan Tests</h1>
+<h2 id="qunit-banner"></h2>
+<h2 id="qunit-userAgent"></h2>
+<ol id="qunit-tests"></ol>
 </body>
-
 </html>

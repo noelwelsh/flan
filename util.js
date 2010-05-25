@@ -1,17 +1,11 @@
 //
 // Curried functions
-// makeCounter : () -> Any -> Number
-function makeCounter() {
-  var count = 0;
-  return function(e) {
-    var now = count;
-    count++;
-    //console.log(now)
-    return now;
-  };
-}
-// makeCounter : () -> Any -> Number
-function makeCounter2(start, step) {
+
+// makeCounter : [Number] [Number] -> Any -> Number
+function makeCounter(start, step) {
+  start = start || 0;
+  step = step || 1;
+
   var count = start;
   return function(e) {
     var now = count;
@@ -20,16 +14,12 @@ function makeCounter2(start, step) {
   };
 }
 
-// makeCounter : () -> Any -> Number
+// makeDownCounter : [Number] [Number] -> Any -> Number
 function makeDownCounter(start, step) {
-  var count = start;
-  return function(e) {
+  start = start || 0;
+  step = step || 1;
 
-    var now = count;
-    count--;
-    console.log(now)
-    return now;
-  };
+  return makeCounter(start, -step);
 }
 
 // makeAdder : Number -> Number -> Number
@@ -42,7 +32,6 @@ function makeAdder(start) {
 // makeMultiplier : Number -> Number -> Number
 function makeMultiplier(start) {
   return function(step) {
-    // console.log(start * step)
     return start * step;
   };
 }
@@ -56,9 +45,9 @@ function parseColour(colour) {
 
   if(m) {
     return {
-      r: parseInt(m[1], 16);
-      g: parseInt(m[2], 16);
-      b: parseInt(m[3], 16);
+      r: parseInt(m[1], 16),
+      g: parseInt(m[2], 16),
+      b: parseInt(m[3], 16)
     };
   }
 }
