@@ -24,3 +24,19 @@ function makeMultiplier(start) {
     return start * step;
   };
 }
+
+//
+// Parsing colours
+
+// parseColour : String -> U({r: Number,  g: Number, b: Number}, undefined)
+function parseColour(colour) {
+  var m = color.match(/\#([0-9a-fA-F][0-9a-fA-F])([0-9a-fA-F][0-9a-fA-F])([0-9a-fA-F][0-9a-fA-F])/);
+
+  if(m) {
+    return {
+      r: parseInt(m[1], 16);
+      g: parseInt(m[2], 16);
+      b: parseInt(m[3], 16);
+    };
+  }
+}
